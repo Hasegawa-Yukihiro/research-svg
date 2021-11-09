@@ -2,7 +2,7 @@ import React from "react";
 import useApp from "./hooks";
 
 const App: React.FC = () => {
-  const { test } = useApp();
+  const { handleChange } = useApp();
 
   return (
     <div
@@ -10,8 +10,7 @@ const App: React.FC = () => {
         margin: 15
       }}
     >
-      <p>{test}</p>
-      <input type="file" onChange={e => console.log(e)} />
+      <input type="file" onChange={handleChange} accept={"image/*"} />
     </div>
   );
 };
