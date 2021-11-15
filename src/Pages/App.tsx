@@ -3,7 +3,6 @@ import useApp from "./hooks";
 
 const App: React.FC = () => {
   const { handleChange, svg } = useApp();
-
   return (
     <div
       style={{
@@ -11,7 +10,12 @@ const App: React.FC = () => {
       }}
     >
       <input type="file" onChange={handleChange} accept={"image/*"} />
-      <div dangerouslySetInnerHTML={{ __html: svg }} />
+      <div
+        style={{
+          marginTop: 15
+        }}
+      />
+      <img src={`data:image/svg+xml;base64,${svg}`} alt="" />
     </div>
   );
 };
